@@ -12,7 +12,7 @@ http {
   include mime.types;
   server {
     listen <%= ENV["PORT"] %>;
-    server_name  ~^(?<port>[1-9]{1}[0-9]{3,4})\.(.+)$ ;;
+    server_name  "~^(?<port>[1-9]{1}[0-9]{3,4})\.(.+)$";
     <% if ENV["ROOT"] %>
       root /app/www/<%= ENV["ROOT"] %>;
     <% else %>
